@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弧线</title>
+</head>
+<body>
+        <canvas id="canvas" width="1024" height="768" style="border:1px solid #000; margin:20px auto;"></canvas>
+        <script>
+            window.onload = function () { 
+                var canvas = document.getElementById('canvas');
+                var context = canvas.getContext('2d');
+
+                context.lineWidth = 5;
+                context.strokeStyle = 'black';
+                context.fillStyle = 'red';
+               
+                for(var i = 0;i<10;i++){
+                    context.beginPath();
+                    context.arc(50+i*100,100,40,0,2*Math.PI*(i+1)/10);
+                    context.closePath();
+                    context.stroke();
+                }
+
+                for(var i = 0;i<10;i++){
+                    context.beginPath();
+                    context.arc(50+i*100,300,40,0,2*Math.PI*(i+1)/10);
+                   // context.closePath();
+                    context.stroke();
+                }
+                for(var i = 0;i<10;i++){
+                    context.beginPath();
+                    context.arc(50+i*100,400,40,0,2*Math.PI*(i+1)/10,true);
+                    context.closePath();
+                    context.stroke();
+                }
+                for(var i = 0;i<10;i++){
+                    context.beginPath();
+                    context.arc(50+i*100,500,40,0,2*Math.PI*(i+1)/10);
+                    context.closePath();
+                    context.fill();
+                }
+
+                
+                
+             }
+        </script>
+</body>
+</html>
